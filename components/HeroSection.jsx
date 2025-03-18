@@ -1,8 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Calendar, X, Loader2, ChevronRight, Clock, Camera } from 'lucide-react';
+import { useRouter } from 'next/navigation'; 
 
 const HeroSection = () => {
+    const router = useRouter();
   const [destination, setDestination] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [recentSearches, setRecentSearches] = useState([]);
@@ -31,12 +33,10 @@ const HeroSection = () => {
     if (destination.trim()) {
       setIsGenerating(true);
       saveSearch(destination);
-      
-      // Simulate API call
+
+      // After 1 second, navigate to a new page
       setTimeout(() => {
-        setIsGenerating(false);
-        // Instead of alert, could navigate to results page
-        alert(`Generating itinerary for: ${destination}`);
+        router.push('/plan'); // Replace with your actual route
       }, 1500);
     }
   };
@@ -68,9 +68,6 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      {/* Navigation Bar */}
-      
-
       {/* Main Content */}
       <main>
         {/* Hero Section */}
@@ -247,8 +244,6 @@ const HeroSection = () => {
           </div>
         </div>
       </main>
-
-
     </div>
   );
 };
