@@ -15,7 +15,7 @@ const Navbar = () => {
                   <div className="bg-emerald-400 text-white p-2 rounded-full">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="ml-2 text-xl font-bold">TripPlanner</span>
+                  <span className="ml-2 text-xl font-bold text-black">TripPlanner</span>
                 </div>
               </div>
             </div>
