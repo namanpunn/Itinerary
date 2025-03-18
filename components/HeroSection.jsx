@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Search, Calendar, X, Loader2, ChevronRight, Clock, Camera } from 'lucide-react';
-import { MapPin } from "lucide-react";
+import { Search, MapPin, Calendar, X, Loader2, ChevronRight, Clock, Camera } from 'lucide-react';
+
 const HeroSection = () => {
   const [destination, setDestination] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);

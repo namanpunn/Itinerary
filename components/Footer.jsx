@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { MapPin } from 'lucide-react'
 const Footer = () => {
   return (
     <div>
