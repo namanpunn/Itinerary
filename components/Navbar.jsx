@@ -8,6 +8,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
+            <a href="/">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <div className="flex items-center">
@@ -18,18 +19,16 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
+            </a>
             
             {/* Navigation Links */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-900 hover:text-emerald-500 px-3 py-2 font-medium">Discover</a>
-              <a href="#" className="text-gray-900 hover:text-emerald-500 px-3 py-2 font-medium">My Trips</a>
-            </nav>
+            
             
             {/* Right Side Actions */}
             <div className="flex items-center">
-              <button className="bg-black text-white rounded-full px-4 py-2 font-medium hover:bg-gray-800 transition duration-150">
+              {/* <button className="bg-black text-white rounded-full px-4 py-2 font-medium hover:bg-gray-800 transition duration-150">
                 Sign in
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

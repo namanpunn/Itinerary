@@ -2,32 +2,19 @@ import React from 'react';
 
 const Loader = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      {/* Spinner */}
-      <svg
-        className="animate-spin h-12 w-12 text-blue-600"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          className="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="4"
-        ></circle>
-        <path
-          className="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-        ></path>
-      </svg>
-      {/* Message */}
-      <p className="mt-4 text-xl font-semibold">
-        Your trip itinerary is generating...
-      </p>
+    <div
+      role="alert"
+      aria-busy="true"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
+    >
+      <div className="flex flex-col items-center">
+        {/* Spinner */}
+        <div className="w-16 h-16 border-4 border-blue-600 border-dashed rounded-full animate-spin"></div>
+        {/* Message */}
+        <h2 className="mt-4 text-xl font-semibold text-gray-700">
+          Generating itinerary...
+        </h2>
+      </div>
     </div>
   );
 };
