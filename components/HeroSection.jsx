@@ -98,48 +98,41 @@ const HeroSection = () => {
 
             {/* Search Bar */}
             <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto relative">
-              <div className="flex items-center border border-gray-300 rounded-full shadow-sm bg-white overflow-hidden">
-                <div className="flex-grow pl-3 sm:pl-5 relative flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter destination"
-                    className="w-full py-3 sm:py-4 focus:outline-none text-gray-600"
-                    value={destination}
-                    onChange={(e) => setDestination(e.target.value)}
-                    onFocus={handleInputFocus}
-                    onBlur={handleInputBlur}
-                    required
-                  />
-                  {destination && (
-                    <button
-                      type="button"
-                      onClick={clearDestination}
-                      className="text-gray-400 hover:text-gray-600"
-                    >
-                      <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </button>
-                  )}
-                </div>
-                <button
-                  type="submit"
-                  className={`bg-emerald-400 hover:bg-emerald-500 text-white px-4 sm:px-8 py-3 sm:py-4 font-medium transition duration-150 flex items-center ${
-                    isGenerating ? "opacity-75" : ""
-                  }`}
-                  disabled={isGenerating}
-                >
-                  {isGenerating ? (
-                    <>
-                      <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 animate-spin" />
-                      <span className="text-sm sm:text-base">Searching...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Search className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-                      <span className="text-sm sm:text-base">Search</span>
-                    </>
-                  )}
-                </button>
-              </div>
+            <div className="flex items-center rounded-full shadow-sm overflow-hidden">
+        <div className="flex-grow relative flex items-center bg-white">
+          <input
+            type="text"
+            placeholder="Enter destination"
+            className="w-full py-3 px-4 focus:outline-none text-gray-600 rounded-l-full"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            required
+          />
+          {destination && (
+            <button
+              type="button"
+              onClick={clearDestination}
+              className="absolute right-3 text-gray-400 hover:text-gray-600"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
+        </div>
+        <button
+          type="submit"
+          className="bg-emerald-400 hover:bg-emerald-500 text-white px-6 py-3 font-medium transition duration-150 flex items-center justify-center rounded-r-full"
+          disabled={isGenerating}
+        >
+          {isGenerating ? (
+            <Loader2 className="h-5 w-5 animate-spin" />
+          ) : (
+            <Search className="h-5 w-5" />
+          )}
+          <span className="ml-2">Search</span>
+        </button>
+      </div>
 
               {/* Search Suggestions */}
               {showSearchSuggestions && (
